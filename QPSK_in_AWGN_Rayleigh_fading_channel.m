@@ -1,3 +1,4 @@
+%octave code
 clear,clc,close all
 function [h]=rayleigh(fd,t)
 %該程式利用改進的jakes模型來產生單徑的平坦型Rayleigh衰落信道
