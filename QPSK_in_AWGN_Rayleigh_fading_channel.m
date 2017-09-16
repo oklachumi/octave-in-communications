@@ -1,4 +1,3 @@
-%octave code
 clear,clc,close all
 function [h]=rayleigh(fd,t)
 %該程式利用改進的jakes模型來產生單徑的平坦型Rayleigh衰落信道
@@ -71,9 +70,26 @@ for i=1:length(SNR)
   [errorSym_rale SER_rale(i)]=symerr(msg,msg_demod_rale); 
 end
 
+scatterplot(msg_tx);                              
+title('AWGN Tx constellation');
+xlabel('I');
+ylabel('Q');
+scatterplot(msg_rx);                              
+title('AWGN Rx constellation');
+xlabel('I');
+ylabel('Q');
+scatterplot(msg_tx_rale);                              
+title('AWGN+Rayleigh Tx constellation');
+xlabel('I');
+ylabel('Q');
+scatterplot(msg_rx_rale);                              
+title('AWGN+Rayleigh Rx constellation');
+xlabel('I');
+ylabel('Q');
+
 figure
 semilogy(SNR,BER,'-ro',SNR,SER,'-r*',SNR,BER_rale,'-b+',SNR,SER_rale,'-b^');
-legend('AWGN\_BER','AWGN\_SER','Rayleigh+AWGN\_BER','Rayleigh+AWGN\_SER');
+legend('AWGN\_BER','AWGN\_SER','Rayleigh+AWGN\_BER','Rayleigh+AWGN\_SER','location','southwest');
 title('QPSK in AWGN+Rayleigh fading channel capability');
 xlabel('SNR(dB)');
 ylabel('BER and SER');
