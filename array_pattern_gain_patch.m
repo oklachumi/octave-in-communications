@@ -72,10 +72,10 @@ while timesrun<1000,
 % plot antenna pattern in polar coordinates
 % plot isotropic pattern and then plot dipole pattern in same fig.
     polar(theta,(round(R*100))/100,'r'); 
-    set (gca, "rtick", 0:0.2:1, "ttick", 0:10:350);
+    set (gca, 'rtick', 0:0.2:1, 'ttick', 0:10:350);
     hold on;
     polar(theta_d,(round(Rdipole*100))/100,'b');
-    set (gca, "rtick", 0:0.2:1, "ttick", 0:10:350);
+    set (gca, 'rtick', 0:0.2:1, 'ttick', 0:10:350);
     title(['Field pattern of ',num2str(N),' sources spaced by ',num2str(SP),' lambda,  ','phase delta= ',num2str(PH),' deg']);
     text(max(R),max(R),['Dtheta = ',num2str((round(DBI*100))/100),' dBi']);
     text(max(R),-max(R),['Dphi = ',num2str((round(DBIdipole*100))/100),' dBi']);
